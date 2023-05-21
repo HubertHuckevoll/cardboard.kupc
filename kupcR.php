@@ -16,8 +16,8 @@ class kupcR
   public function __construct($cbbr = null, $gbbr = null, $userCSSf = null, $ep = 'kupc.php')
   {
     $requestM = new cbRequestM();
-    $ep   = ($ep == '') ? basename($_SERVER["SCRIPT_NAME"]) : $ep;
-    $hook = $requestM->getReqVar('hook');
+    $ep       = ($ep == '') ? basename($_SERVER["SCRIPT_NAME"]) : $ep;
+    $hook     = $requestM->getReqVar('hook');
     $this->op = $requestM->getReqVar('op');
 
     // check hook

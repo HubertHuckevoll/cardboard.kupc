@@ -34,7 +34,7 @@ class kupcC extends cbPageC
   {
     session_start();
 
-    parent::__construct();
+    parent::__construct(new \cb\view\fragment\cbLinkVF(), new cbRequestM());
 
     $this->ep = $ep;
 
@@ -259,10 +259,10 @@ class kupcC extends cbPageC
    * initView
    * _________________________________________________________________
    */
-  public function initView($uiViewName = '')
+  public function initView(string $uiViewName, array $viewHints)
   {
     $this->ui = ($this->box['type'] == 'classic') ? 'classic' : 'gdocs';
-    parent::initView($uiViewName);
+    parent::initView($uiViewName, $viewHints);
 
     $this->view->setData('articleBox', $this->articleBox);
     $this->view->setData('internal', $this->internal);
