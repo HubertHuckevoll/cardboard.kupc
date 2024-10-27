@@ -8,6 +8,7 @@ class loginVP extends \cb\view\page\cbPageVP
    */
   public function drawPage($errMsg = '')
   {
+    $html  = '';
     $html .= '<!DOCTYPE HTML>
               <html lang="de">
               <head>

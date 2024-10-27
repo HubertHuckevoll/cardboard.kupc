@@ -6,7 +6,7 @@ class prefsVP extends kupcClassicVP
    * Konstruktor
    * _______________________________________________________________
    */
-  public function __construct($ep = '', $hook, $linker = null)
+  public function __construct($ep, $hook, $linker = null)
   {
     parent::__construct($ep, $hook, $linker);
     $this->active = 'prefs';

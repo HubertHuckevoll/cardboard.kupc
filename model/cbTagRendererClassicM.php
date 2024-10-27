@@ -71,8 +71,8 @@ class cbTagRendererClassicM extends cbTagRendererBaseM
 
   protected function tag_link($data, $p, $cAttrs)
   {
-    $to = $p['to'];
-    $type = $p['type'];
+    $to = isset($p['to']) ? $p['to'] : '';
+    $type = isset($p['type']) ? $p['type'] : '';
 
     switch($type)
     {

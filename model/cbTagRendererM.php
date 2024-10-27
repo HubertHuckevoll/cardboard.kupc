@@ -210,8 +210,8 @@ class cbTagRendererM
     $original = trim($treffer[0]);
 
     $tag = $treffer[1];
-    $rawParams = ($treffer[2] != false) ? $treffer[2] : '';
-    $data = ($treffer[3] != false) ? $treffer[3] : '';
+    $rawParams = isset($treffer[2]) ? $treffer[2] : '';
+    $data = isset($treffer[3]) ? $treffer[3] : '';
 
     $tag = strtolower($this->cleanString($tag));
     $rawParams = $this->cleanString($rawParams);
@@ -296,7 +296,7 @@ class cbTagRendererM
    */
   protected function tag_hint($data, $p, $cAttrs)
   {
-    $type = $p['is'];
+    $type = isset($p['is']) ? $p['is'] : 'empty';
     $this->hints[$type] = $data;
 
     return '';

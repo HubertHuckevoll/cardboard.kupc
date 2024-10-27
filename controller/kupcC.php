@@ -261,12 +261,18 @@ class kupcC extends cbPageC
    */
   public function initView($uiViewName = '')
   {
-    $this->ui = ($this->box['type'] == 'classic') ? 'classic' : 'gdocs';
+    if (isset($this->box['type']))
+    {
+      $this->ui = ($this->box['type'] == 'classic') ? 'classic' : 'gdocs';
+    }
+        
     parent::initView($uiViewName);
 
     $this->view->setData('articleBox', $this->articleBox);
     $this->view->setData('internal', $this->internal);
-    $this->view->setData('boxNameAlias', $this->box['alias']);
+    if (isset($this->box['alias'])) {
+      $this->view->setData('boxNameAlias', $this->box['alias']);
+    } 
 
     $this->view->setData('tags', $this->cbbr->getTagDescs());
     $this->view->setData('smileyTable', $this->cbbr->smileyTable);

@@ -6,7 +6,7 @@ class gtoolsVP extends kupcClassicVP
    * Konstruktor
    * _______________________________________________________________
    */
-  public function __construct($ep = '', $hook, $linker)
+  public function __construct($ep, $hook, $linker)
   {
     parent::__construct($ep, $hook, $linker);
     $this->active = 'gtools';

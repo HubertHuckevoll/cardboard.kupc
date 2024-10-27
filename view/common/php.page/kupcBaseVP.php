@@ -28,7 +28,7 @@ class kupcBaseVP extends \cb\view\page\cbPageVP
               <script src="'.CB_KUPC_ROOT.'view/common/js/kupc.js"></script>
             </head>
             <body>
-            <div id="status">'.$this->data['status'].'</div>
+            <div id="status">'.(isset($this->data['status']) ? $this->data['status'] : '').'</div>
             <div id="ep" style="display: none;">'.$this->ep.'</div>';
 
     // wrapper for full height
@@ -97,7 +97,7 @@ class kupcBaseVP extends \cb\view\page\cbPageVP
   {
     // "Now playing" button
     $caption = ($this->getData('article') != '') ? $this->getData('article') : 'Textauswahl';
-    $cont .= '<a class="cButton" id="nowPlaying">'.ellipsis($caption, 37).'</a>';
+    $cont = '<a class="cButton" id="nowPlaying">'.ellipsis($caption, 37).'</a>';
 
     // Menu
     $cont .= '<div id="blockMenu" style="display: none;">';
@@ -133,6 +133,8 @@ class kupcBaseVP extends \cb\view\page\cbPageVP
   protected function mainToolbarLeftTabs()
   {
     $article = $this->data['article'];
+    $cont = '';
+    $tag = '';
 
     $sClass = ($this->active == 'edit') ? 'activeTab' : 'tab';
     $cont .= '<a class="'.$sClass.' b_edit" href="'.$this->linker->href($this->ep, array('hook'=>'text','op'=>'load', 'article'=>$article)).'">Text</'.$tag.'>';
