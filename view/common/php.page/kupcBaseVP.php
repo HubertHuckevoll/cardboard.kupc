@@ -28,7 +28,7 @@ class kupcBaseVP extends \cb\view\page\cbPageVP
               <script src="'.CB_KUPC_ROOT.'view/common/js/kupc.js"></script>
             </head>
             <body>
-            <div id="status">'.(isset($this->data['status']) ? $this->data['status'] : '').'</div>
+            <div id="status">'.($this->data['status'] ?? '').'</div>
             <div id="ep" style="display: none;">'.$this->ep.'</div>';
 
     // wrapper for full height
